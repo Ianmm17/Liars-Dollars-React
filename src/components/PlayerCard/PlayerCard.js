@@ -1,15 +1,16 @@
 import React from "react";
 
-import InputName from "./InputName";
 import './PlayerCard.css'
 import PlayerWinsButton from "./PlayerWinsButton";
 import PlayerLosesButton from "./PlayerLosesButton";
 import PlayerBalance from "./PlayerBalance";
+import InputName from "./InputName";
+
 
 function PlayerCard () {
     return (
-        <div>
-            <form className={'player-card'}>
+        <div className={'player-card'}>
+            <form>
                 <InputName/>
                 <PlayerBalance/>
                 <PlayerWinsButton/>
