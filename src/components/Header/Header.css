@@ -1,0 +1,24 @@
+.header {
+    background: lightgreen;
+    margin: 25px;
+    padding: 2px;
+}
+
+.liars-dollar {
+    color: white;
+    text-align: center;
+    font-size: xxx-large;
+    text-shadow: 2px 2px #000000;
+}
+
+@media (max-width: 620px) {
+    .liars-dollar {
+        font-size: xx-large;
+    }
+}
+
+@media (max-width: 420px) {
+    .liars-dollar {
+        font-size: large;
+    }
+}
