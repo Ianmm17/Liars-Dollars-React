@@ -1,0 +1,10 @@
+.input-name {
+    width: 200px;
+    box-shadow: 2px 2px black;
+}
+
+@media (max-width: 420px) {
+    .input-name {
+        width: 120px;
+    }
+}

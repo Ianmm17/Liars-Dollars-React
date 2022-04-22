@@ -1,7 +1,13 @@
 import Header from "./components/Header/Header";
+import PlayerCard from "./components/PlayerCard/PlayerCard";
+
+
 function App() {
   return (
-    <Header/>
+      <div>
+        <Header/>
+        <PlayerCard/>
+      </div>
   );
 }
 
