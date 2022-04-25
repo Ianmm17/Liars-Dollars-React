@@ -1,19 +1,14 @@
 import React from "react";
 
-import PlayerCard from "../PlayerCard/PlayerCard";
+import PlayerCard from "../PlayerCardContainer/PlayerCard";
+import PlayerCardContainer from "../PlayerCardContainer/PlayerCardContainer";
 import './AddPlayer.css'
 
 function AddPlayer (props) {
 
-    function addPlayerHandler () {
-        return (
-            <PlayerCard/>
-        )
-    }
-
     return (
         <div className={'add-player'}>
-            <button onClick={addPlayerHandler}>Add Player</button>
+            <button onClick={props.newPlayer}>Add Player</button>
         </div>
     )
 }
