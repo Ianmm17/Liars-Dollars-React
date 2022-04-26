@@ -11,12 +11,23 @@ function App() {
     function addNewPlayer() {
         setPlayers([...players, {name: "", balance: 0}])
     }
-    
+    function onNameChangeHandler(event) {
+        players[0].name = event.target.value
+        console.log(players[0])
+    }
+    function onBalanceChangeHandler(event) {
+        players[0].balance = event.target.value
+        console.log(players[0])
+
+    }
+
+
+
     return (
         <div>
             <Header/>
             <AddPlayer newPlayer={addNewPlayer}/>
-            <PlayerCardContainer players={players}/>
+            <PlayerCardContainer players={players} onNameChange={onNameChangeHandler} onBalanceChange={onBalanceChangeHandler}/>
         </div>
     );
 }
