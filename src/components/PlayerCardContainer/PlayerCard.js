@@ -6,22 +6,20 @@ import './PlayerCard.css'
 
 
 function PlayerCard(props) {
-    console.log(props)
 
     //const key = Math.random()
 
     function nameHandler(event) {
-        console.log(props.key)
-        props.onNameChange(event, props.key)
+        props.onNameChange(event, props.id)
     }
 
     function balanceHandler(event) {
-        props.onNameChange(event, props.key)
+        props.onBalanceChange(event, props.id)
     }
 
     return (
         <form className="player-card">
-            <CustomInput type="text" classes={'input-name'} name={props.name} key={props.key} onNameChange={nameHandler} placeHolder='Enter Name' />
+            <CustomInput type="text" classes={'input-name'} name={props.name} onNameChange={nameHandler} placeHolder='Enter Name' />
             <CustomInput type="number" classes={'input-balance'} balance={props.balance}  onBalanceChange={balanceHandler} placeHolder='Enter starting balance' />
             <CustomButton winOrLost={'W'} classes={'winner'} player={{name: props.name, balance: props.balance}}/>
             <CustomButton winOrLost={'L'} classes={'lost'}/>
