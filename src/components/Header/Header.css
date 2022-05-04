@@ -1,7 +1,5 @@
 .header {
-    background: lightgreen;
-    margin: 25px;
-    padding: 2px;
+
 }
 
 .liars-dollar {
@@ -9,6 +7,9 @@
     text-align: center;
     font-size: xxx-large;
     text-shadow: 2px 2px #000000;
+    background: lightgreen;
+    margin: 25px;
+    padding: 2px;
 }
 
 .add-player{
