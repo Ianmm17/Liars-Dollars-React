@@ -11,7 +11,7 @@ function App() {
     function addNewPlayer() {
         setPlayers([...players, {name: "", balance: 0, id: Math.random()}])
     }
-
+  
     function onNameChangeHandler(event, id) {
         for (let i = 0; i < players.length; i++) {
             if (players[i].id === id) {
