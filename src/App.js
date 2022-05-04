@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 
 import Header from "./components/Header/Header";
 import AddPlayer from "./components/AddPlayer/AddPlayer";
@@ -7,17 +7,29 @@ import PlayerCardContainer from "./components/PlayerCardContainer/PlayerCardCont
 function App() {
     
     const [players, setPlayers] = useState([])
+    const updatePlayer = useRef(players)
 
     function addNewPlayer() {
-        setPlayers([...players, {name: "", balance: 0}])
+        setPlayers([...players, {name: "", balance: 0, key: Math.random()}])
     }
-    function onNameChangeHandler(event) {
-        players[0].name = event.target.value
-        console.log(players[0])
+
+    function onNameChangeHandler(event, key) {
+        console.log(key, 'YEYYEY')
+        //players.name = event.target.value
+        // for (let i = 0; i < players.length; i++) {
+        //     if (players[i].key === players[i].key) {
+        //         console.log('made it', players[i])
+        //         players[i].name = event.target.value
+        //
+        //         console.log(players[i].key, 'plsurt')
+        //
+        //     }
+        // }
+        console.log(players)
     }
     function onBalanceChangeHandler(event) {
         players[0].balance = event.target.value
-        console.log(players[0])
+        console.log(players)
 
     }
 
@@ -27,7 +39,7 @@ function App() {
         <div>
             <Header/>
             <AddPlayer newPlayer={addNewPlayer}/>
-            <PlayerCardContainer players={players} onNameChange={onNameChangeHandler} onBalanceChange={onBalanceChangeHandler}/>
+            <PlayerCardContainer players={players} key={players.key} onNameChange={onNameChangeHandler} onBalanceChange={onBalanceChangeHandler}/>
         </div>
     );
 }
