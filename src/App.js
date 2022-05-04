@@ -12,11 +12,11 @@ function App() {
         setPlayers([...players, {name: "", balance: 0}])
     }
     function onNameChangeHandler(event) {
-        players[0].name = event.target.value
+        players[0].name = event.target.value // temporarly until I can figure out how to know which player input I'm actually editing.
         console.log(players[0])
     }
     function onBalanceChangeHandler(event) {
-        players[0].balance = event.target.value
+        players[0].balance = event.target.value // temporarly until I can figure out how to know which player input I'm actually editing.
         console.log(players[0])
 
     }
