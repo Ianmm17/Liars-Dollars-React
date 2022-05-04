@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 
 import Header from "./components/Header/Header";
 import AddPlayer from "./components/AddPlayer/AddPlayer";
@@ -9,16 +9,22 @@ function App() {
     const [players, setPlayers] = useState([])
 
     function addNewPlayer() {
-        setPlayers([...players, {name: "", balance: 0}])
+        setPlayers([...players, {name: "", balance: 0, id: Math.random()}])
     }
-    function onNameChangeHandler(event) {
-        players[0].name = event.target.value // temporarly until I can figure out how to know which player input I'm actually editing.
-        console.log(players[0])
+  
+    function onNameChangeHandler(event, id) {
+        for (let i = 0; i < players.length; i++) {
+            if (players[i].id === id) {
+                players[i].name = event.target.value
+            }
+        }
     }
-    function onBalanceChangeHandler(event) {
-        players[0].balance = event.target.value // temporarly until I can figure out how to know which player input I'm actually editing.
-        console.log(players[0])
-
+    function onBalanceChangeHandler(event, id) {
+        for (let i = 0; i < players.length; i++) {
+            if (players[i].id === id) {
+                players[i].balance = event.target.value
+            }
+        }
     }
 
 
@@ -27,7 +33,7 @@ function App() {
         <div>
             <Header/>
             <AddPlayer newPlayer={addNewPlayer}/>
-            <PlayerCardContainer players={players} onNameChange={onNameChangeHandler} onBalanceChange={onBalanceChangeHandler}/>
+            <PlayerCardContainer players={players} id={players.id} onNameChange={onNameChangeHandler} onBalanceChange={onBalanceChangeHandler}/>
         </div>
     );
 }

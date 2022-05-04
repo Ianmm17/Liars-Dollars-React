@@ -5,13 +5,23 @@ import CustomButton from "./CustomButton";
 import './PlayerCard.css'
 
 
-function PlayerCard({ name, balance, onNameChange, onBalanceChange }) {
+function PlayerCard(props) {
+
+    //const key = Math.random()
+
+    function nameHandler(event) {
+        props.onNameChange(event, props.id)
+    }
+
+    function balanceHandler(event) {
+        props.onBalanceChange(event, props.id)
+    }
 
     return (
         <form className="player-card">
-            <CustomInput type="text" classes={'input-name'} name={name} onNameChange={onNameChange} placeHolder='Enter Name' />
-            <CustomInput type="number" classes={'input-balance'} balance={balance}  onBalanceChange={onBalanceChange} placeHolder='Enter starting balance' />
-            <CustomButton winOrLost={'W'} classes={'winner'} player={{name: name, balance: balance}}/>
+            <CustomInput type="text" classes={'input-name'} name={props.name} onNameChange={nameHandler} placeHolder='Enter Name' />
+            <CustomInput type="number" classes={'input-balance'} balance={props.balance}  onBalanceChange={balanceHandler} placeHolder='Enter starting balance' />
+            <CustomButton winOrLost={'W'} classes={'winner'} player={{name: props.name, balance: props.balance}}/>
             <CustomButton winOrLost={'L'} classes={'lost'}/>
         </form>
     )
