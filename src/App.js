@@ -18,7 +18,7 @@ function App() {
   
     function onNameChangeHandler(event, id) {
         const playersArr = [...players];
-        const playerIndex = getPlayerIndexById(id, playersArr);
+        const playerIndex = id - 1
         if (playerIndex > -1) {
             playersArr[playerIndex].name = event.target.value;
             setPlayers(playersArr);
@@ -28,21 +28,11 @@ function App() {
     
     function onBalanceChangeHandler(event, id) {
         const playerArr = [...players];
-        const playerIndex = getPlayerIndexById(id, playerArr);
+        const playerIndex = id - 1
         if (playerIndex > -1) {
             playerArr[playerIndex].balance = event.target.value;
             setPlayers(playerArr);
         }
-    }
-
-    function getPlayerIndexById(id, playersArr) {
-        let playerIndex = -1;
-        for (let i = 0; i < playersArr.length; i++) {
-            if (playersArr[i].id === id) {
-                playerIndex = i
-            }
-        }
-        return playerIndex
     }
 
     return (
