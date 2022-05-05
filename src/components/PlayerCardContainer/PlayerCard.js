@@ -19,8 +19,8 @@ function PlayerCard(props) {
 
     return (
         <form className="player-card">
-            <CustomInput type="text" classes={'input-name'} name={props.name} onNameChange={nameHandler} placeHolder='Enter Name' />
-            <CustomInput type="number" classes={'input-balance'} balance={props.balance}  onBalanceChange={balanceHandler} placeHolder='Enter starting balance' />
+            <CustomInput type="text" classes={'input-name'} name={props.name} changeHandler={nameHandler} placeHolder='Enter Name' />
+            <CustomInput type="number" classes={'input-balance'} balance={props.balance}  changeHandler={balanceHandler} placeHolder='Enter starting balance' />
             <CustomButton winOrLost={'W'} classes={'winner'} player={{name: props.name, balance: props.balance}}/>
             <CustomButton winOrLost={'L'} classes={'lost'}/>
         </form>
