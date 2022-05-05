@@ -42,6 +42,11 @@ function App() {
         }
     }
 
+    // function startGame(gameStarted) {
+    //     setGameStarted(gameStarted)
+    //     console.log(gameStarted)
+    // }
+
     return (
         <div>
             <Header/>

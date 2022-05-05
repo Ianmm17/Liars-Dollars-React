@@ -7,7 +7,7 @@ function CustomButton(props) {
     function handleWinOrLose(e) {
         e.preventDefault()
         const worL = props.winOrLost
-        console.log(worL, props.player.name.value)
+        console.log(worL, props.gameStarted)
     }
 
     return (
