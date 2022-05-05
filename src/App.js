@@ -19,19 +19,26 @@ function App() {
     function onNameChangeHandler(event, id) {
         const playersArr = [...players];
         const playerIndex = id - 1
-        if (playerIndex > -1) {
-            playersArr[playerIndex].name = event.target.value;
-            setPlayers(playersArr);
-            console.log(players)
-        }
+        replacingValueInPlayerArr(playerIndex, playersArr, event, true)
     }
     
     function onBalanceChangeHandler(event, id) {
-        const playerArr = [...players];
+        const playersArr = [...players];
         const playerIndex = id - 1
+        replacingValueInPlayerArr(playerIndex, playersArr, event, false)
+    }
+
+    function replacingValueInPlayerArr(playerIndex, playerArr, event, editingName) {
         if (playerIndex > -1) {
-            playerArr[playerIndex].balance = event.target.value;
-            setPlayers(playerArr);
+            if (editingName) {
+                playerArr[playerIndex].name = event.target.value;
+                setPlayers(playerArr);
+            } else {
+                playerArr[playerIndex].balance = event.target.value;
+                setPlayers(playerArr);
+            }
+        } else {
+            console.log('No players in Array to reference')
         }
     }
 
