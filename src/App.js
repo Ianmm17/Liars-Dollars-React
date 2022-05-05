@@ -15,7 +15,7 @@ function App() {
             [...players, {name: "", balance: 0, id: players.length+1}]
             )
     }
-    
+  
     function onNameChangeHandler(event, id) {
         const playersArr = [...players];
         const playerIndex = getPlayerIndexById(id, playersArr);

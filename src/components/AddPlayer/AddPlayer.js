@@ -2,10 +2,10 @@ import React from "react";
 
 import './AddPlayer.css'
 
-function AddPlayer (props) {
+function AddPlayer(props) {
 
     return (
-        <div className={'add-player'}>
+        <div className='add-player'>
             <button onClick={props.newPlayer}>Add Player</button>
         </div>
     )
