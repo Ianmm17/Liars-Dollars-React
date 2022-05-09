@@ -9,8 +9,11 @@ const INTIAL_STATE = [];
 function App() {
     
     const [players, setPlayers] = useState(INTIAL_STATE)
+    const [gameStarted, setGameStarted] = useState(false)
+
 
     function addNewPlayer() {
+        setGameStarted(false)
         setPlayers(
             [...players, {name: "", balance: 0, id: players.length+1}]
             )
@@ -42,16 +45,20 @@ function App() {
         }
     }
 
-    // function startGame(gameStarted) {
-    //     setGameStarted(gameStarted)
-    //     console.log(gameStarted)
-    // }
+    function startGame(gameHasStarted) {
+        setGameStarted(gameHasStarted)
+    }
 
     return (
         <div>
             <Header/>
             <AddPlayer newPlayer={addNewPlayer}/>
-            <PlayerCardContainer players={players} onNameChange={onNameChangeHandler} onBalanceChange={onBalanceChangeHandler}/>
+            <PlayerCardContainer players={players}
+                                 onNameChange={onNameChangeHandler}
+                                 onBalanceChange={onBalanceChangeHandler}
+                                 hasGameStarted={gameStarted}
+                                 startGame={startGame}
+            />
         </div>
     );
 }
