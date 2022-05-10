@@ -15,8 +15,8 @@ function PlayerCard(props) {
         props.onBalanceChange(event, props.id)
     }
 
-    function gameHasStarted(gameStarted) {
-        props.startGame(gameStarted)
+    function gameHasStarted() {
+        props.startGame()
     }
 
 

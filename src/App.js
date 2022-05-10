@@ -45,8 +45,8 @@ function App() {
         }
     }
 
-    function startGame(gameHasStarted) {
-        setGameStarted(gameHasStarted)
+    function startGame() {
+        setGameStarted(true)
     }
 
     return (
