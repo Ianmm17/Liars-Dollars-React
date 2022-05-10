@@ -13,9 +13,10 @@ function App() {
 
 
     function addNewPlayer() {
+        console.log(players)
         setGameStarted(false)
         setPlayers(
-            [...players, {name: "", balance: 0, id: players.length+1}]
+            [...players, {name: "", balance: '', id: players.length+1}]
             )
     }
   
