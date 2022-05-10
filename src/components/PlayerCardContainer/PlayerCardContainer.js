@@ -1,12 +1,21 @@
 import React, {useState} from "react";
 
 import PlayerCard from "./PlayerCard";
+import PlayerCardForm from "./PlayerCardForm";
 
 function PlayerCardContainer(props) {
 
     const playerCards = props.players.map((player) => {
-        return <PlayerCard key={player.id} name={player.name} balance={player.balance} id={player.id} hasGameStarted={props.hasGameStarted} startGame={props.startGame} onNameChange={props.onNameChange} onBalanceChange={props.onBalanceChange}/>
+        if (props.gameStarted) {
+            return <PlayerCardForm player={player}/>
+        } else {
+            return <PlayerCard key={player.id} player={player} gameStarted={props.gameStarted}
+                               startGame={props.startGame}
+                               onNameChange={props.onNameChange} onBalanceChange={props.onBalanceChange}
+            />
+        }
     })
+
 
     return (
         <div>

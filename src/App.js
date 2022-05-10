@@ -13,9 +13,10 @@ function App() {
 
 
     function addNewPlayer() {
+        console.log(players)
         setGameStarted(false)
         setPlayers(
-            [...players, {name: "", balance: 0, id: players.length+1}]
+            [...players, {name: "", balance: '', id: players.length+1}]
             )
     }
   
@@ -45,8 +46,8 @@ function App() {
         }
     }
 
-    function startGame(gameHasStarted) {
-        setGameStarted(gameHasStarted)
+    function startGame() {
+        setGameStarted(true)
     }
 
     return (
@@ -56,7 +57,7 @@ function App() {
             <PlayerCardContainer players={players}
                                  onNameChange={onNameChangeHandler}
                                  onBalanceChange={onBalanceChangeHandler}
-                                 hasGameStarted={gameStarted}
+                                 gameStarted={gameStarted}
                                  startGame={startGame}
             />
         </div>
