@@ -8,23 +8,23 @@ import './PlayerCard.css'
 function PlayerCard(props) {
 
     function nameHandler(event) {
-        props.onNameChange(event, props.id)
+        props.onNameChange(event, props.player.id)
     }
 
     function balanceHandler(event) {
-        props.onBalanceChange(event, props.id)
+        props.onBalanceChange(event, props.player.id)
     }
 
-    function gameHasStarted() {
+    function startGame() {
         props.startGame()
     }
 
 
     return (
         <form className="player-card">
-            <CustomInput type="text" classes={'input-name'} name={props.name} changeHandler={nameHandler} hasGameStarted={props.hasGameStarted} placeHolder='Enter Name' />
-            <CustomInput type="number" classes='input-balance' balance={props.balance}  changeHandler={balanceHandler} hasGameStarted={props.hasGameStarted} placeHolder='Enter starting balance' />
-            <CustomButton winOrLost='W' classes='winner' player={{name: props.name, balance: props.balance}} gameStarted={gameHasStarted} hasGameStarted={props.hasGameStarted}/>
+            <CustomInput type="text" classes={'input-name'} name={props.player.name} changeHandler={nameHandler} gameStarted={props.gameStarted} placeHolder='Enter Name' />
+            <CustomInput type="number" classes='input-balance' balance={props.player.balance}  changeHandler={balanceHandler} gameStarted={props.gameStarted} placeHolder='Enter starting balance' />
+            <CustomButton winOrLost='W' classes='winner' player={{name: props.name, balance: props.balance}} startGame={startGame} gameStarted={props.gameStarted}/>
             <CustomButton winOrLost='L' classes='lost'/>
         </form>
     )

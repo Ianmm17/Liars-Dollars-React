@@ -6,7 +6,7 @@ import WinOrLose from "./WinOrLose";
 function CustomButton(props) {
     function handleWinOrLose(e) {
         e.preventDefault()
-        props.gameStarted(true)
+        props.startGame(true)
         const worL = props.winOrLost
     }
 

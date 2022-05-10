@@ -56,7 +56,7 @@ function App() {
             <PlayerCardContainer players={players}
                                  onNameChange={onNameChangeHandler}
                                  onBalanceChange={onBalanceChangeHandler}
-                                 hasGameStarted={gameStarted}
+                                 gameStarted={gameStarted}
                                  startGame={startGame}
             />
         </div>
