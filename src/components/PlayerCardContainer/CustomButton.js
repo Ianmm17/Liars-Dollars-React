@@ -8,7 +8,6 @@ function CustomButton(props) {
         e.preventDefault()
         props.startGame(true)
         props.updatePlayersBalance()
-        const worL = props.winOrLost
     }
 
 
