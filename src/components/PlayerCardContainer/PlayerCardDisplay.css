@@ -1,0 +1,43 @@
+.player-card-display {
+    margin: 45px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    display: block;
+
+}
+
+.player-name-display {
+    width: 150px;
+    display: inline-flex;
+    padding: 5px;
+    box-shadow: 2px 2px purple;
+    background-color: lightgray;
+
+
+}
+
+.player-balance-display {
+    width: 150px;
+    display: inline-flex;
+    padding: 5px;
+    margin-left: 20px;
+    border-width: 3px;
+    border-color: gold;
+    background-color: lightgray;
+    box-shadow: 2px 2px gold;
+}
+
+@media (max-width: 420px) {
+    .player-name-display {
+        width: 120px;
+    }
+
+    .player-balance-display {
+        width: 55px;
+    }
+
+    .player-card-display {
+        margin: 25px;
+    }
+}
