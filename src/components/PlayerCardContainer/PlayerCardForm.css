@@ -8,6 +8,8 @@
 }
 
 .player-name-display {
+    width: 150px;
+    display: inline-flex;
     padding: 5px;
     box-shadow: 2px 2px purple;
     background-color: lightgray;
@@ -16,6 +18,8 @@
 }
 
 .player-balance-display {
+    width: 150px;
+    display: inline-flex;
     padding: 5px;
     margin-left: 20px;
     border-width: 3px;
