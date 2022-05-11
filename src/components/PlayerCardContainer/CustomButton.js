@@ -1,7 +1,6 @@
 import React from "react";
 
 import './CustomButton.css'
-import WinOrLose from "./WinOrLose";
 
 function CustomButton(props) {
 
