@@ -1,0 +1,10 @@
+.player-card {
+    margin: 45px;
+    text-align: center;
+}
+
+@media (max-width: 420px) {
+    .player-card {
+        margin: 25px;
+    }
+}

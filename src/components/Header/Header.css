@@ -1,0 +1,40 @@
+.header {
+
+}
+
+.liars-dollar {
+    color: white;
+    text-align: center;
+    font-size: xxx-large;
+    text-shadow: 2px 2px #000000;
+    background: lightgreen;
+    margin: 25px;
+    padding: 2px;
+}
+
+.add-player{
+    text-align: center;
+}
+
+.add-player button {
+    background-color: purple;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    text-shadow: 2px 2px black;
+    padding: 10px;
+    box-shadow: 2px 2px black;
+}
+
+@media (max-width: 620px) {
+    .liars-dollar {
+        font-size: xx-large;
+    }
+}
+
+@media (max-width: 420px) {
+    .liars-dollar {
+        font-size: large;
+    }
+}
