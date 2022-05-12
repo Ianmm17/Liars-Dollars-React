@@ -9,7 +9,7 @@ function PlayerCardContainer(props) {
         if (props.gameStarted) {
             return <PlayerCardDisplay player={player}/>
         } else {
-            return <PlayerCardForm key={player.id} player={player} gameStarted={props.gameStarted}
+            return <PlayerCardForm id={player.id} player={player} gameStarted={props.gameStarted}
                                    startGame={props.startGame}
                                    onNameChange={props.onNameChange} onBalanceChange={props.onBalanceChange}
             />
