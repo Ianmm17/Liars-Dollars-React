@@ -15,12 +15,7 @@ function PlayerCardForm(props) {
         props.onBalanceChange(event, props.player.id)
     }
 
-    function startGame() {
-        props.startGame()
-    }
-
     function updatePlayersBalance() {
-
         console.log(props.player.balance)
     }
 
