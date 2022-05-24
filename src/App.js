@@ -54,11 +54,12 @@ function App() {
         <div>
             <Header/>
             <AddPlayer newPlayer={addNewPlayer}/>
-            <PlayerCardContainer players={players}
-                                 onNameChange={onNameChangeHandler}
-                                 onBalanceChange={onBalanceChangeHandler}
-                                 gameStarted={gameStarted}
-                                 startGame={startGame}
+            <PlayerCardContainer
+                players={players}
+                onNameChange={onNameChangeHandler}
+                onBalanceChange={onBalanceChangeHandler}
+                gameStarted={gameStarted}
+                startGame={startGame}
             />
         </div>
     );

@@ -29,16 +29,32 @@ function PlayerCardForm(props) {
         }
     }
 
-    function updatePlayersBalance() {
-        console.log((parseInt(props.player.balance) + 1).toString())
+    const customWinButtonProps = {
+        winOrLost: 'W',
+        classStyle: 'winner',
+        player: props.player,
+        updatePlayersBalance: props.updatePlayersBalance,
+        startGame: props.startGame,
+        gameStarted: props.gameStarted
     }
+
+    const customLoseButtonProps = {
+        winOrLost: 'L',
+        classStyle: 'lost',
+        player: props.player,
+        updatePlayersBalance: props.updatePlayersBalance,
+        startGame: props.startGame,
+        gameStarted: props.gameStarted
+    }
+
+
 
     return (
         <form className="player-card">
             <CustomInput inputData={nameInputProps}/>
             <CustomInput inputData={balanceInputProps}/>
-            <CustomButton winOrLost='W' classes='winner' player={{name: props.name, balance: props.balance}} updatePlayersBalance={updatePlayersBalance} startGame={props.startGame} gameStarted={props.gameStarted}/>
-            <CustomButton winOrLost='L' classes='lost'/>
+            <CustomButton customButtonData={customWinButtonProps}/>
+            <CustomButton customButtonData={customLoseButtonProps}/>
         </form>
     )
 }
