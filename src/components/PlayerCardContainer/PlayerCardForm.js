@@ -20,8 +20,8 @@ function PlayerCardForm(props) {
     }
 
     function updatePlayersBalance() {
-
-        console.log(props.player.balance)
+        // TODO: 1) Verify there's two or more players. 2) Work on updating player cards once W or L is clicked
+        console.log(parseInt(props.player.balance) + 1)
     }
 
     return (
