@@ -7,7 +7,7 @@ function CustomButton(props) {
     function handleWinOrLose(e) {
         e.preventDefault()
         props.startGame(true)
-        props.updatePlayersBalance()
+        props.updatePlayersBalance(props.winOrLost)
     }
 
 
