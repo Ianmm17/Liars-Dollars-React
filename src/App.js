@@ -33,14 +33,10 @@ function App() {
     }
 
     function replacingValueInPlayerArr(playerIndex, playerArr, event, editingName) {
+        let target = editingName ? 'name' : 'balance'
         if (playerIndex > -1) {
-            if (editingName) {
-                playerArr[playerIndex].name = event.target.value;
-                setPlayers(playerArr);
-            } else {
-                playerArr[playerIndex].balance = event.target.value;
-                setPlayers(playerArr);
-            }
+            playerArr[playerIndex][target] = event.target.value;
+            setPlayers(playerArr);
         } else {
             console.log('No players in Array to reference')
         }

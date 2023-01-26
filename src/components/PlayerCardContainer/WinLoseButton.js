@@ -1,13 +1,13 @@
 import React from "react";
 
-import './CustomButton.css'
+import './WinLoseButton.css'
 
-function CustomButton(props) {
+function WinLoseButton(props) {
 
     function handleWinOrLose(e) {
         e.preventDefault()
-        props.startGame(true)
-        props.updatePlayersBalance(props.winOrLost)
+        props.clickHandler()
+        // props.updatePlayersBalance(props.winOrLost)
     }
 
 
@@ -16,4 +16,4 @@ function CustomButton(props) {
     )
 }
 
-export default CustomButton
+export default WinLoseButton

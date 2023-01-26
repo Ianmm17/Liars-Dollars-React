@@ -7,12 +7,9 @@ function PlayerCardContainer(props) {
 
     const playerCards = props.players.map((player) => {
         if (props.gameStarted) {
-            return <PlayerCardDisplay key={player.id} player={player} players={props.players} gameStarted={props.gameStarted}
-                                      startGame={props.startGame}
-                                      onNameChange={props.onNameChange} onBalanceChange={props.onBalanceChange}/>
+            return <PlayerCardDisplay key={player.id} player={player} players={props.players} onBalanceChange={props.onBalanceChange}/>
         } else {
-            return <PlayerCardForm key={player.id} player={player} players={props.players} gameStarted={props.gameStarted}
-                                   startGame={props.startGame}
+            return <PlayerCardForm key={player.id} player={player} players={props.players} startGame={props.startGame}
                                    onNameChange={props.onNameChange} onBalanceChange={props.onBalanceChange}
             />
         }

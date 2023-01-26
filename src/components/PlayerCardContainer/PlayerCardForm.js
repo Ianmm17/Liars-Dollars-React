@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 import CustomInput from "./CustomInput";
-import CustomButton from "./CustomButton";
+import WinLoseButton from "./WinLoseButton";
 import './PlayerCardForm.css'
 
 
@@ -21,10 +21,10 @@ function PlayerCardForm(props) {
 
     function updatePlayersBalance(winOrLost) {
         // TODO: 1) Verify there's two or more players. 2) Work on updating player cards once W or L is clicked
-        if (winOrLost == 'W') {
+        if (winOrLost === 'W') {
             console.log('we won')
             for (var i = 0; i < props.players.length; i++) {
-                if (props.players[i].name != props.player.name) {
+                if (props.players[i].name !== props.player.name) {
                     props.players[i].balance = parseInt(props.players[i].balance) - 1
                 }
                 console.log(props.players[i]);
@@ -33,7 +33,7 @@ function PlayerCardForm(props) {
         } else {
             console.log('we lost')
             for (var i = 0; i < props.players.length; i++) {
-                if (props.players[i].name != props.player.name) {
+                if (props.players[i].name !== props.player.name) {
                     props.players[i].balance = parseInt(props.players[i].balance) + 1
                 }
                 console.log(props.players[i]);
@@ -45,10 +45,10 @@ function PlayerCardForm(props) {
 
     return (
         <form className="player-card">
-            <CustomInput type="text" classes='input-name' name={props.player.name} displayedText={props.player.name} changeHandler={nameHandler} gameStarted={props.gameStarted} placeHolder='Enter Name' />
-            <CustomInput type="number" classes='input-balance' balance={props.player.balance} displayedText={props.player.balance} changeHandler={balanceHandler} gameStarted={props.gameStarted} placeHolder='Enter starting balance' />
-            <CustomButton winOrLost='W' classes='winner' player={{name: props.name, balance: props.balance}} updatePlayersBalance={updatePlayersBalance} startGame={props.startGame} gameStarted={props.gameStarted}/>
-            <CustomButton winOrLost='L' classes='lost' player={{name: props.name, balance: props.balance}} updatePlayersBalance={updatePlayersBalance} startGame={props.startGame} gameStarted={props.gameStarted}/>
+            <CustomInput type="text" classes='input-name' name={props.player.name} displayedText={props.player.name} changeHandler={nameHandler} placeHolder='Enter Name' />
+            <CustomInput type="number" classes='input-balance' balance={props.player.balance} displayedText={props.player.balance} changeHandler={balanceHandler} placeHolder='Enter starting balance' />
+            <WinLoseButton winOrLost='W' classes='winner' player={{name: props.name, balance: props.balance}} updatePlayersBalance={updatePlayersBalance} clickHandler={startGame}/>
+            <WinLoseButton winOrLost='L' classes='lost' player={{name: props.name, balance: props.balance}} updatePlayersBalance={updatePlayersBalance} clickHandler={startGame}/>
         </form>
     )
 }
